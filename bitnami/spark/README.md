@@ -44,6 +44,11 @@ $ helm delete my-release
 The command removes all the Kubernetes components associated with the chart and deletes the release. Use the option `--purge` to delete all persistent volumes too.
 
 ## Parameters
+## limit number of default core for application
+
+put below env variable in spark-master
+
+export SPARK_MASTER_OPTS="-Dspark.deploy.defaultCores=<value>"
 
 The following tables lists the configurable parameters of the spark chart and their default values.
 
