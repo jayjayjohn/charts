@@ -148,7 +148,7 @@ worker:
 
   ## Set the maximun number of cores
   ##
-  # coreLimit:
+  coreLimit: 2
 
   ## Working directory for the application
   ##
@@ -171,7 +171,7 @@ worker:
 
   ## Number of spark workers (will be the min number when autoscaling is enabled)
   ##
-  replicaCount: 2
+  replicaCount: 3
 
   ## Kubernetes Security Context
   ## https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
@@ -283,7 +283,7 @@ security:
 service:
   ## Kubernetes service type
   ##
-  type: ClusterIP
+  type: NodePort
 
   ## Cluster Service port
   ##
@@ -297,8 +297,8 @@ service:
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport
   ##
   nodePorts:
-    cluster: ""
-    web: ""
+    cluster: "5000"
+    web: "6006"
 
   ## Set the LoadBalancer service type to internal only.
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
