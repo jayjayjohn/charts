@@ -59,6 +59,8 @@ spec:
           env:
             - name: SPARK_MODE
               value: "master"
+            - name: SPARK_MASTER_OPTS
+              value: "-Dspark.deploy.defaultCores=2"              
             {{- if .Values.master.debug }}
             - name: BASH_DEBUG
               value: {{ ternary "1" "0" .Values.image.debug | quote }}
