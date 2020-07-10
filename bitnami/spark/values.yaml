@@ -67,11 +67,11 @@ master:
 
   ## Kubernetes Security Context
   ## https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
-  ##
+  ## Run container as a root 0 or non-normal user 1001, cat /etc/passwd
   securityContext:
     enabled: true
-    fsGroup: 1001
-    runAsUser: 1001
+    fsGroup: 0
+    runAsUser: 0
 
   ## Annotations to add to the statefulset
   ##
